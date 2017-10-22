@@ -15,6 +15,13 @@ class CreateCustomerAddrsTable extends Migration
     {
         Schema::create('customer_addrs', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('customer_id');
+            $table->integer('introducer_id');
+            $table->tinyInteger('receiver_type');
+            $table->string('receiver_name',20);
+            $table->string('receiver_phone',64);
+            $table->string('receiver_addr',64);
+            $table->tinyInteger('is_default');
             $table->timestamps();
         });
     }
