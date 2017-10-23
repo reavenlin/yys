@@ -15,6 +15,12 @@ class CreateStockExchangesTable extends Migration
     {
         Schema::create('stock_exchanges', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('outer_order_id');
+            $table->integer('product_id');
+            $table->tinyInteger('exchange_from');
+            $table->integer('num');
+            $table->string('reason',30);
+            $table->tinyInteger('status');
             $table->timestamps();
         });
     }
